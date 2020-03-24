@@ -18,7 +18,7 @@ class Map {
   Avec Résolution de Promise
   */
    loadApi() {
-      fetch("https:api.jcdecaux.com/vls/v1/stations?contract=creteil&apiKey=c830f8cc9d106f985a9368a038b44c12c127c37e")
+      fetch('https://api.jcdecaux.com/vls/v1/stations?contract=creteil&apiKey=c830f8cc9d106f985a9368a038b44c12c127c37e')
       .then(result => result.json()) //Si résolut le resultat return Objet format JSON
       .then(stationData => {
         this.stationData = stationData; 
@@ -64,7 +64,7 @@ class Map {
   /* Setup des info Stations*/
   showInfo(station) {
     this.marker.addEventListener("click", () => {
-      fetch("https://api.jcdecaux.com/vls/v3/stations/" + station.number + "?contract=creteil&apiKey=c830f8cc9d106f985a9368a038b44c12c127c37e")
+      fetch('https://api.jcdecaux.com/vls/v3/stations/' + station.number + '?contract=creteil&apiKey=c830f8cc9d106f985a9368a038b44c12c127c37e')
         .then(result => result.json()) //Récuperer l'info de chaque station en temps réel
         .then(json => station); 
       //console.log(station.address);
