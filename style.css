@@ -295,9 +295,10 @@ input {
   color: blanchedalmond;
 }
 
+/* Tablette IPad*/
 @media (min-width: 768px) and (max-width: 1024px) {
   .container {
-    width: 100%;
+    width: 95%;
     margin: auto;
   }
 
@@ -314,9 +315,38 @@ input {
     font-size: large;
 }
 
+  #prev-slide,
+  #next-slide,
+  #play-slide {
+    cursor: pointer;
+    position: relative;
+    color: blanchedalmond;
+    background-color: black;
+}
+
+  #next-slide {
+    left: 11%;
+    top: 5%;
+    position: relative;
+}
+
+  #prev-slide {
+    left: 3%;
+    top: 5%;
+    position: relative;
+}
+
+  #play-slide {
+    left: -1%;
+    top: 5%;
+    position: relative;
+}
+
+/* Block Carte*/
   #carte {
-    width: 100%;
-    left: -2%;
+    width: 95%;
+    left: 0;
+    right: 0;
   }
 
   /*Information Block
@@ -331,8 +361,8 @@ input {
 
   #reservation-button {
     position: absolute;
-    top: 90%;
-    left: 44%;
+    top: 89%;
+    left: 37%;
   }
 
   #resaBtn {
@@ -352,7 +382,8 @@ input {
   #reservationBlock {
     position: absolute;
     top: 115%;
-    left: 30%;
+    left: 24%;
+    margin-bottom: 2%;
   }
 
 
@@ -364,17 +395,18 @@ input {
   }
 
   #stop {
-    position: relative;
-    left: 1%;
-    margin-top: -40px;
+    position: absolute;
+    left: 2%;
+    top: 96%;
     border-radius: 1%;
   }
 
 }
 
+/* Iphone7*/
 @media (max-width: 767px) {
   .container {
-    width: 100%;
+    width: 95%;
     margin: auto;
   }
 
@@ -410,19 +442,21 @@ input {
   #play-slide {
     bottom: 0;
     left: 0;
+    right: 0;
     position: relative;
   }
 
   #carte {
-    width: 100%;
-    left: -2%;
+    width: 95%;
+    left: 0;
+    right: 0;
   }
 
   /*Information Block
 */
   #informationBlock {
     position: relative;
-    width: 100%;
+    width: 95%;
     height: auto;
     top: 108%;
     left: 0;
@@ -430,8 +464,8 @@ input {
 
   #reservation-button {
     position: absolute;
-    top: 93%;
-    left: 40%;
+    top: 89%;
+    left: 38%;
   }
 
   #resaBtn {
@@ -443,7 +477,7 @@ input {
   #error {
     position: absolute;
     top: 85%;
-    left: 8%;
+    left: 4%;
   }
 
   /*Reservation Block
@@ -459,7 +493,7 @@ input {
   */
 
   #countdown {
-    position: relative;
+    position: absolute;
     margin-top: 80%;
     text-align: justify;
     flex-wrap: wrap;
@@ -468,8 +502,9 @@ input {
 
   #stop {
     position: relative;
-    left: 36%;
-    margin-top: 8%;
+    left: 34%;
+    margin-top: 100%;
     border-radius: 1%;
+    margin-bottom: 2%;
   }
 }
