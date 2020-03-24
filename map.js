@@ -17,11 +17,11 @@ class Map {
   /* Traitement Data API Asynchrone
   Avec Résolution de Promise
   */
-  loadApi() {
-    fetch("https:api.jcdecaux.com/vls/v1/stations?contract=creteil&apiKey=c830f8cc9d106f985a9368a038b44c12c127c37e")
+   loadApi() {
+      fetch("https:api.jcdecaux.com/vls/v1/stations?contract=creteil&apiKey=c830f8cc9d106f985a9368a038b44c12c127c37e")
       .then(result => result.json()) //Si résolut le resultat return Objet format JSON
-      .then(stationData => { //Si résolut Json prend le parametre stationData
-        this.stationData = stationData; //il sera stocké dans le array vide this.stationData[]
+      .then(stationData => {
+        this.stationData = stationData; 
         this.setMarker(); //Si tout est OK apl de la func pr création Markers
       })
       //Si erreur dans le code cela va afficher une alerte Client/Side
@@ -31,7 +31,6 @@ class Map {
   /* Setup des markers */
   setMarker() {
     this.markerCluster = L.markerClusterGroup();
-    //Itération ds stationtData a l'aide de Loop 'for in'
     for (let i in this.stationData) {
       //console.log(this.stationData[0]);
       const station = this.stationData[i];
@@ -54,7 +53,7 @@ class Map {
       this.marker = L.marker(station.position, {
         icon: markerIcon
       });
-      this.marker.bindPopup(station.name); //le Popup affiche nom le station selected
+      this.marker.bindPopup(station.name);
       this.markerCluster.addLayer(this.marker);
 
       this.showInfo(station);
@@ -65,9 +64,8 @@ class Map {
   /* Setup des info Stations*/
   showInfo(station) {
     this.marker.addEventListener("click", () => {
-      //Récuperer l'info de chaque station en temps réel
       fetch("https://api.jcdecaux.com/vls/v3/stations/" + station.number + "?contract=creteil&apiKey=c830f8cc9d106f985a9368a038b44c12c127c37e")
-        .then(result => result.json()) 
+        .then(result => result.json()) //Récuperer l'info de chaque station en temps réel
         .then(json => station); 
       //console.log(station.address);
 
@@ -117,7 +115,6 @@ class Map {
         <p>${station.available_bike_stands} :places</p>
         <p><span style='color:red'>`+sessionStorage.getItem("stationVelo")+'</span> ' + ' ' + `:vélos disponibles</p>`;
       }
-      
       //Logic Apparition et disparation des Block InfoStation Form et Button Réserver + Block Reservation
       if (station.available_bikes <= 0 || station.status === "En travaux") {
         informationBlock.style.display = "none";
