@@ -1,0 +1,475 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #3c4855;
+}
+
+h1,
+p {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: blanchedalmond;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  margin-top: 1%;
+}
+
+p {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+/*
+Slider
+*/
+
+.container {
+  width: 60%;
+  margin: auto;
+  border: 10px black solid;
+  overflow: hidden;
+}
+
+#slider {
+  text-align: center;
+  height: 500px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+#slider img {
+  height: 500px;
+  width: 100%;
+}
+
+h2 {
+  position: relative;
+  bottom: 11%;
+}
+
+#slider {
+  color: blanchedalmond;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
+}
+
+.slide {
+
+  position: relative;
+  width: 100%;
+  height: 480px;
+  flex-shrink: 0;
+  transition: left 600ms ease-in;
+  left: 0;
+}
+
+.slide p {
+
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgb(7, 7, 7);
+  background-color: rgba(211, 211, 211, 0.25);
+}
+
+/*
+BUTTON SLIDER
+*/
+
+#prev-slide,
+#next-slide,
+#play-slide {
+  cursor: pointer;
+  position: absolute;
+  color: blanchedalmond;
+  background-color: black;
+}
+
+
+#next-slide {
+  left: 20%;
+  bottom: 0;
+  position: relative;
+}
+
+#prev-slide {
+  left: 20%;
+  bottom: 0;
+  position: relative;
+}
+
+#play-slide {
+  bottom: 0;
+  left: 20%;
+  position: relative;
+}
+
+
+/*
+Map
+*/
+
+#carte {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin: 2%;
+  margin-bottom: 2%;
+  left: 18%;
+  width: 30%;
+  height: 300px;
+  border: 10px solid black;
+  border-radius: 4px;
+}
+
+#map {
+  position: absolute;
+  width: 100%;
+}
+
+/* 
+Marker Cluster
+*/
+.marker-cluster-small {
+  background-color: rgba(181, 226, 140, 0.6);
+}
+
+.marker-cluster-small div {
+  background-color: rgba(110, 204, 57, 0.6);
+}
+
+.marker-cluster-medium {
+  background-color: rgba(241, 211, 87, 0.6);
+}
+
+.marker-cluster-medium div {
+  background-color: rgba(240, 194, 12, 0.6);
+}
+
+.marker-cluster-large {
+  background-color: rgba(253, 156, 115, 0.6);
+}
+
+.marker-cluster-large div {
+  background-color: rgba(241, 128, 23, 0.6);
+}
+
+/* IE 6-8 fallback colors */
+.leaflet-oldie .marker-cluster-small {
+  background-color: rgb(181, 226, 140);
+}
+
+.leaflet-oldie .marker-cluster-small div {
+  background-color: rgb(110, 204, 57);
+}
+
+.leaflet-oldie .marker-cluster-medium {
+  background-color: rgb(241, 211, 87);
+}
+
+.leaflet-oldie .marker-cluster-medium div {
+  background-color: rgb(240, 194, 12);
+}
+
+.leaflet-oldie .marker-cluster-large {
+  background-color: rgb(253, 156, 115);
+}
+
+.leaflet-oldie .marker-cluster-large div {
+  background-color: rgb(241, 128, 23);
+}
+
+.marker-cluster {
+  background-clip: padding-box;
+  border-radius: 20px;
+}
+
+.marker-cluster div {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+
+  text-align: center;
+  border-radius: 15px;
+  font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.marker-cluster span {
+  line-height: 30px;
+}
+
+/*
+Panneau  info-Station
+*/
+#informationBlock {
+  position: absolute;
+  width: 85%;
+  right: -100%;
+  height: auto;
+  display: none;
+  border: 10px black solid;
+  border-radius: 5%;
+}
+
+#resaBtn {
+  position: relative;
+  left: 76%;
+}
+
+/* Formulaire
+*/
+#myForm {
+  width: 50%;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+input {
+  margin-top: 5%;
+  display: flex;
+  position: relative;
+  left: 50%;
+}
+
+#error {
+  width: auto;
+  font-size: 15px;
+}
+
+/* Reservation Block*/
+
+#reservationBlock {
+  position: relative;
+  left: 107%;
+  width: auto;
+  display: none;
+  z-index: 99;
+  background-color: #3c4855;
+  border: 10px black solid;
+  border-radius: 3%;
+}
+
+/*Canvas*/
+#canvas {
+  width: 100%;
+  height: 138px;
+  background-color: rgb(253, 255, 240);
+}
+
+#effacer {
+  position: relative;
+  left: 40%;
+}
+
+#button-valider {
+  display: none;
+}
+
+#button-confirmation {
+  display: flex;
+  justify-content: center;
+}
+
+/* Timer */
+#countdown {
+  visibility: hidden;
+  height: 40px;
+  width: 100%;
+  background-color: #3c4855;
+  color: blanchedalmond;
+}
+
+#stop {
+  visibility: hidden;
+  background-color: black;
+  color: blanchedalmond;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    margin: auto;
+  }
+
+  #slider img{
+    object-fit: cover;
+  }
+
+  h2 {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    word-break: break-word;
+    text-align: center;
+    font-size: large;
+}
+
+  #carte {
+    width: 100%;
+    left: -2%;
+  }
+
+  /*Information Block
+*/
+  #informationBlock {
+    position: relative;
+    width: 50%;
+    height: auto;
+    top: 126%;
+    left: 0;
+  }
+
+  #reservation-button {
+    position: absolute;
+    top: 90%;
+    left: 44%;
+  }
+
+  #resaBtn {
+    position: absolute;
+    background-color: black;
+    color: blanchedalmond;
+  }
+
+  #error {
+    position: absolute;
+    top: 107%;
+    left: 2%;
+  }
+
+  /*Reservation Block
+  */
+  #reservationBlock {
+    position: absolute;
+    top: 115%;
+    left: 30%;
+  }
+
+
+  /*CountDown Block
+  */
+
+  #countdown {
+    position: relative;
+  }
+
+  #stop {
+    position: relative;
+    left: 1%;
+    margin-top: -40px;
+    border-radius: 1%;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    margin: auto;
+  }
+
+  #slider img{
+    object-fit: cover;
+  }
+
+  h2 {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    word-break: break-word;
+    text-align: center;
+    font-size: large;
+}
+
+  /* Slides Control Buttons
+  */
+
+
+  #next-slide {
+    left: 0;
+    bottom: 0;
+    position: relative;
+  }
+
+  #prev-slide {
+    left: 0;
+    bottom: 0;
+    position: relative;
+  }
+
+  #play-slide {
+    bottom: 0;
+    left: 0;
+    position: relative;
+  }
+
+  #carte {
+    width: 100%;
+    left: -2%;
+  }
+
+  /*Information Block
+*/
+  #informationBlock {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 108%;
+    left: 0;
+  }
+
+  #reservation-button {
+    position: absolute;
+    top: 93%;
+    left: 40%;
+  }
+
+  #resaBtn {
+    position: absolute;
+    background-color: black;
+    color: blanchedalmond;
+  }
+
+  #error {
+    position: absolute;
+    top: 85%;
+    left: 8%;
+  }
+
+  /*Reservation Block
+  */
+  #reservationBlock {
+    position: absolute;
+    top: 115%;
+    left: 0;
+  }
+
+
+  /*CountDown Block
+  */
+
+  #countdown {
+    position: relative;
+    margin-top: 80%;
+    text-align: justify;
+    flex-wrap: wrap;
+    font-size: large;
+  }
+
+  #stop {
+    position: relative;
+    left: 36%;
+    margin-top: 8%;
+    border-radius: 1%;
+  }
+}

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>LibertyCity</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/af2b4bffae.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"/>
+  </head>
+
+  <body>
+    <header>
+      <h1>Louez votre Liberté, Utilisez Vélibre !</h1>
+      <p>Pour reserver, merci de de suivre les instructions ci dessous</p>
+    </header>
+
+    <!--Section Slider-->
+    <div class="container">
+      <div id="slider">
+        <div class="slide">
+          <img src="img/velostation.jpg" alt="banner1" />
+          <h2>
+            Repérez votre station sur la map, et vérifiez la disponibilité des
+            vélos
+          </h2>
+        </div>
+
+        <div class="slide">
+          <img src="img/form.jpg" alt="banner2" />
+          <h2>
+            Remplissez le formulaire et signer dans le cadre pour reserver
+          </h2>
+        </div>
+
+        <div class="slide">
+          <img src="img/bikes.jpg" alt="banner3" />
+          <h2>Une fois reserver vous avez 20 min pour récupérer votre vélo</h2>
+        </div>
+      </div>
+    </div>
+    <!--Fin Section Slider-->
+
+    <!--Section Buttons-->
+    <button id="prev-slide"><i class="fas fa-arrow-left"></i></button>
+    <button id="next-slide"><i class="fas fa-arrow-right"></i></button>
+    <button id="play-slide">Pause</button>
+    <!--Fin Section Buttons-->
+
+    <!--Section Map && Reservation-->
+    <section id="carte">
+      <div id="map" style="height: 280px;"></div>
+
+      <!--Block Information  Station-->
+      <div id="informationBlock">
+        <div id="info-station"></div>
+        <form id="myForm" name="inscription">
+          <label for="nom">
+          <input type="text" pattern="/^[a-zA-Z-\s]+$/" name="nom" id="nom" placeholder="nom" required/>
+        </label>
+          <label for="prenom">
+          <input type="text" pattern="/^[a-zA-Z-\s]+$/" name="prenom" id="prenom" placeholder="prenom" required/>
+        </label>
+          <br />
+          <!--Error Message JS Side-->
+          <p><span id="error"></span></p>
+          <br />
+          <div id="reservation-button">
+            <button id="resaBtn">Réserver</button>
+          </div>
+        </form>
+      </div>
+
+      <!--Block Reservation Station-->
+      <div id="reservationBlock">
+        <!--Canvas + Buttons de Validation-->
+        <canvas id="canvas"></canvas>
+        <button id="effacer">effacer</button>
+
+        <div id="button-confirmation">
+          <button id="button-valider">Valider</button>
+          <button id="button-annuler">Annuler</button>
+        </div>
+      </div>
+    </section>
+
+      <!--Fichier JS Leaflet-->
+      <script
+        src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""
+      ></script>
+    <!--Fin Section Map && Reservation-->
+
+    <!--Debut Section Timer-->
+    <section>
+      <footer>
+        <span id="countdown"></span>
+        <button id="stop">Stop Réservation</button>
+      </footer>
+    </section>
+    <!--Fin Section Timer-->
+
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
+    <script src="slider.js"></script>
+    <script src="map.js"></script>
+    <script src="canvas.js"></script>
+    <script src="form.js"></script>
+    <script src="timer.js"></script>
+    <script src="main.js"></script>
+  </body>
+  </html>
