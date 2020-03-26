@@ -5,7 +5,7 @@
 body {
 
   margin: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Jua', sans-serif;
   background-color: #3c4855;
 }
 
@@ -16,7 +16,7 @@ p {
   justify-content: center;
   text-align: center;
   color: blanchedalmond;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -24,8 +24,9 @@ h1 {
 }
 
 p {
-  margin-top: 2%;
+  margin-top: 3%;
   margin-bottom: 2%;
+  font-size: large;
 }
 
 /*
@@ -37,28 +38,36 @@ Slider
   margin: auto;
   border: 10px black solid;
   overflow: hidden;
+  border-radius: 2%;
+  height: 410px;
 }
 
 #slider {
   text-align: center;
-  height: 500px;
+  height: 391px;
   display: flex;
   flex-flow: row nowrap;
 }
 
 #slider img {
-  height: 500px;
+  height: 391px;
   width: 100%;
 }
 
 h2 {
-  position: relative;
-  bottom: 11%;
+  bottom: 10%;
+  position: absolute;
+  left: 0;
+  height: 60px;
+  right: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: visible;
 }
 
 #slider {
-  color: blanchedalmond;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
+  color: rgb(240, 175, 78);
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
 }
 
 .slide {
@@ -67,7 +76,7 @@ h2 {
   width: 100%;
   height: 480px;
   flex-shrink: 0;
-  transition: left 600ms ease-in;
+  transition: left 700ms ease-in;
   left: 0;
 }
 
@@ -221,8 +230,11 @@ Panneau  info-Station
 }
 
 #resaBtn {
-  position: relative;
-  left: 76%;
+  position: absolute;
+  left: 40%;
+  top: 90%;
+  background-color: black;
+  color: blanchedalmond;
 }
 
 /* Formulaire
@@ -238,7 +250,7 @@ input {
   margin-top: 5%;
   display: flex;
   position: relative;
-  left: 50%;
+  left: 60%;
 }
 
 #error {
@@ -308,7 +320,6 @@ input {
 
   h2 {
     position: absolute;
-    bottom: -30px;
     width: 100%;
     word-break: break-word;
     text-align: center;
@@ -325,7 +336,7 @@ input {
 }
 
   #next-slide {
-    left: 11%;
+    left: 9%;
     top: 5%;
     position: relative;
 }
@@ -355,13 +366,13 @@ input {
     position: relative;
     width: 50%;
     height: auto;
-    top: 126%;
+    top: 130%;
     left: 0;
   }
 
   #reservation-button {
     position: absolute;
-    top: 89%;
+    top: 91%;
     left: 37%;
   }
 
@@ -371,10 +382,26 @@ input {
     color: blanchedalmond;
   }
 
+  /* Formulaire
+*/
+  #myForm {
+    width: 50%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  input {
+    margin-top: 5%;
+    display: flex;
+    position: relative;
+    left: 65%;
+  }
+
   #error {
     position: absolute;
-    top: 107%;
-    left: 2%;
+    top: 92%;
+    left: 8%;
   }
 
   /*Reservation Block
@@ -397,7 +424,7 @@ input {
   #stop {
     position: absolute;
     left: 2%;
-    top: 96%;
+    top: 90%;
     border-radius: 1%;
   }
 
@@ -414,34 +441,40 @@ input {
     object-fit: cover;
   }
 
-  h2 {
-    position: absolute;
-    bottom: -30px;
-    width: 100%;
-    word-break: break-word;
-    text-align: center;
-    font-size: large;
-}
+  
+    h2 {
+      bottom: 14%;
+      position: absolute;
+      left: 0;
+      height: 60px;
+      right: 0;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      visibility: visible;
+      font-size: large;
+    }
+
 
   /* Slides Control Buttons
   */
 
 
   #next-slide {
-    left: 0;
+    left: 1rem;
     bottom: 0;
     position: relative;
   }
 
   #prev-slide {
-    left: 0;
+    left: 1rem;
     bottom: 0;
     position: relative;
+    margin-top: 2%;
   }
 
   #play-slide {
-    bottom: 0;
-    left: 0;
+    bottom: 0rem;
+    left: 1rem;
     right: 0;
     position: relative;
   }
@@ -464,7 +497,7 @@ input {
 
   #reservation-button {
     position: absolute;
-    top: 89%;
+    top: 91%;
     left: 38%;
   }
 
@@ -473,10 +506,25 @@ input {
     background-color: black;
     color: blanchedalmond;
   }
+  /* Formulaire
+*/
+  #myForm {
+    width: 70%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  input {
+    margin-top: 4%;
+    display: flex;
+    position: relative;
+    left: 45%;
+  }
 
   #error {
     position: absolute;
-    top: 85%;
+    top: 90%;
     left: 4%;
   }
 
@@ -503,7 +551,7 @@ input {
   #stop {
     position: relative;
     left: 34%;
-    margin-top: 100%;
+    margin-top: 103%;
     border-radius: 1%;
     margin-bottom: 2%;
   }
