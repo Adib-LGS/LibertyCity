@@ -3,7 +3,6 @@ class Timer {
         this.countdownTexte = document.getElementById("countdown");
         this.validerButton = document.querySelector("#button-valider");
         this.stopTimerButton = document.querySelector("#stop");
-        //this.startingMinutes = 20; //les 20 min de Départ du Timer
         this.time = (min * 60) + sec; //Obtenir toutes les secondes des 20min (1200 Seconds)
     }
 

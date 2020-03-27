@@ -38,7 +38,7 @@ Slider
   margin: auto;
   border: 10px black solid;
   overflow: hidden;
-  border-radius: 2%;
+  border-radius: 1%;
   height: 410px;
 }
 
@@ -230,9 +230,9 @@ Panneau  info-Station
 }
 
 #resaBtn {
-  position: absolute;
-  left: 40%;
-  top: 90%;
+  margin-left: 40%;
+  margin-bottom: 2%;
+  margin-top: 4%;
   background-color: black;
   color: blanchedalmond;
 }
@@ -247,15 +247,16 @@ Panneau  info-Station
 
 
 input {
-  margin-top: 5%;
+  margin-top: 4%;
   display: flex;
   position: relative;
-  left: 60%;
+  left: 50%;
 }
 
 #error {
-  width: auto;
-  font-size: 15px;
+  width: max-content;
+  font-size: 1rem;
+  margin-top: 4%;
 }
 
 /* Reservation Block*/
@@ -395,12 +396,12 @@ input {
     margin-top: 5%;
     display: flex;
     position: relative;
-    left: 65%;
+    left: 50%;
   }
 
   #error {
     position: absolute;
-    top: 92%;
+    top: 87%;
     left: 8%;
   }
 
@@ -509,7 +510,7 @@ input {
   /* Formulaire
 */
   #myForm {
-    width: 70%;
+    width: 50%;
     flex-direction: column;
     text-align: center;
   }
@@ -519,13 +520,12 @@ input {
     margin-top: 4%;
     display: flex;
     position: relative;
-    left: 45%;
+    left: 50%;
   }
 
   #error {
     position: absolute;
-    top: 90%;
-    left: 4%;
+    top: 85%;
   }
 
   /*Reservation Block

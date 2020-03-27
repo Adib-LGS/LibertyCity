@@ -66,20 +66,16 @@
       <div id="informationBlock">
         <div id="info-station"></div>
         <form id="myForm" name="inscription">
-          <label for="nom">
-          <input type="text" pattern="/^[a-zA-Z-\s]+$/" name="nom" id="nom" placeholder="nom" required/>
-        </label>
-          <label for="prenom">
-          <input type="text" pattern="/^[a-zA-Z-\s]+$/" name="prenom" id="prenom" placeholder="prenom" required/>
-        </label>
-          <br />
+          <label for="nom"></label>
+          <input type="text" pattern="/^[a-zA-Z-\s]+$/" name="nom" id="nom" placeholder="Nom" required />
+          <label for="prenom"></label>
+          <input type="text" pattern="/^[a-zA-Z-\s]+$/" name="prenom" id="prenom" placeholder="Prenom" required/>
           <!--Error Message JS Side-->
-          <p><span id="error"></span></p>
-          <br />
+          <span id="error"></span>
+        </form>
           <div id="reservation-button">
             <button id="resaBtn">Réserver</button>
           </div>
-        </form>
       </div>
 
       <!--Block Reservation Station-->

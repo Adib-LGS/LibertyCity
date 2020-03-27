@@ -29,7 +29,7 @@ class Form {
                 this.errorForm.style.display = 'block';
                 this.reservationBtn.style.display = 'none';
 
-            } else if ((!localStorage.getItem(this.nomForm.value)) && (!localStorage.getItem(this.prenomForm.vale))) {
+            } else if((!localStorage.getItem('nom'))&&(!localStorage.getItem('prenom'))) {
                 localStorage.setItem('Nom', this.nomForm.value);
                 localStorage.setItem('Prenom', this.prenomForm.value);
                 this.reservationBtn.style.display = 'block';
@@ -42,8 +42,10 @@ class Form {
     formDataUser(){
         this.myForm.addEventListener("click", (e) => {
             e.preventDefault();
-            this.nomForm.value = localStorage.getItem('Nom');
-            this.prenomForm.value = localStorage.getItem('Prenom');   
+            if((localStorage.getItem('Nom'))&&(localStorage.getItem('Prenom'))) {
+                this.nomForm.value = localStorage.getItem('Nom');
+                this.prenomForm.value = localStorage.getItem('Prenom'); 
+            } 
         });
     }
 
@@ -63,7 +65,7 @@ class Form {
             this.reservationBlock.style.display = 'none';
             this.informationBlock.style.display = 'block';
             this.errorForm.style.display = 'none';
-            
+
         });
     }
 }
