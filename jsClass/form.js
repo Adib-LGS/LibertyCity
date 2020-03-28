@@ -26,20 +26,26 @@ class Form {
             } else if ((!this.nomForm.value.trim()) || (!this.prenomForm.value.trim())) {
                 this.errorForm.innerHTML = "SVP, veuillez remplir tout les champs";
                 this.errorForm.style.color = 'orange';
-                this.errorForm.style.display = 'block';
-                this.reservationBtn.style.display = 'none';
-
-            } else if((!localStorage.getItem('nom'))&&(!localStorage.getItem('prenom'))) {
-                localStorage.setItem('Nom', this.nomForm.value);
-                localStorage.setItem('Prenom', this.prenomForm.value);
+            } else {
                 this.reservationBtn.style.display = 'block';
                 this.errorForm.style.display = 'none';
             }   
         });
     }
 
-    /* Recupere le Nom et Prenom dans formVerification et le colle dans le Formulaire*/
-    formDataUser(){
+    /* Enregiste le Nom et Prenom de L'utilisateur */
+    formValiderDataUser(){
+        this.reservationBtn.addEventListener("click", (e) =>{
+        e.preventDefault(); 
+        if((!localStorage.getItem('nom'))&&(!localStorage.getItem('prenom'))) {
+                localStorage.setItem('Nom', this.nomForm.value);
+                localStorage.setItem('Prenom', this.prenomForm.value);
+            }
+        });
+    }
+
+    /* Recupere le Nom et Prenom dans formValiderData et le colle dans le Formulaire*/
+    formRecupererDataUser(){
         this.myForm.addEventListener("click", (e) => {
             e.preventDefault();
             if((localStorage.getItem('Nom'))&&(localStorage.getItem('Prenom'))) {

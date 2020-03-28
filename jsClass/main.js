@@ -13,7 +13,8 @@ map2.loadApi();
 /* Initialisation du formulaire */
 const form2 = new Form();
 form2.formVerification();
-form2.formDataUser();
+form2.formValiderDataUser();
+form2.formRecupererDataUser();
 form2.formValidation();
 form2.formAnnulation();
 

@@ -9,6 +9,8 @@ body {
   background-color: #3c4855;
 }
 
+/*---- PC  Screen----*/
+
 h1,
 p {
   margin: auto;
@@ -29,9 +31,7 @@ p {
   font-size: large;
 }
 
-/*
-Slider
-*/
+/*Slider */
 
 .container {
   width: 60%;
@@ -88,9 +88,7 @@ h2 {
   background-color: rgba(211, 211, 211, 0.25);
 }
 
-/*
-BUTTON SLIDER
-*/
+/* BUTTON SLIDER */
 
 #prev-slide,
 #next-slide,
@@ -99,6 +97,7 @@ BUTTON SLIDER
   position: absolute;
   color: blanchedalmond;
   background-color: black;
+  border-radius: 999px;
 }
 
 
@@ -120,10 +119,7 @@ BUTTON SLIDER
   position: relative;
 }
 
-
-/*
-Map
-*/
+/* Map */
 
 #carte {
   position: relative;
@@ -144,9 +140,7 @@ Map
   width: 100%;
 }
 
-/* 
-Marker Cluster
-*/
+/* Marker Cluster */
 .marker-cluster-small {
   background-color: rgba(181, 226, 140, 0.6);
 }
@@ -216,9 +210,7 @@ Marker Cluster
   line-height: 30px;
 }
 
-/*
-Panneau  info-Station
-*/
+/* Panneau  info-Station */
 #informationBlock {
   position: absolute;
   width: 85%;
@@ -230,27 +222,32 @@ Panneau  info-Station
 }
 
 #resaBtn {
-  margin-left: 40%;
+  margin-left: 35%;
   margin-bottom: 2%;
   margin-top: 4%;
   background-color: black;
   color: blanchedalmond;
+  border-radius: 999px;
 }
 
-/* Formulaire
-*/
+/* Formulaire */
 #myForm {
+  display: flex;
   width: 50%;
   flex-direction: column;
   text-align: center;
+  color: blanchedalmond;
 }
 
 
 input {
   margin-top: 4%;
-  display: flex;
   position: relative;
   left: 50%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+  color: blanchedalmond;
 }
 
 #error {
@@ -282,15 +279,18 @@ input {
 #effacer {
   position: relative;
   left: 40%;
+  border-radius: 999px;
 }
 
 #button-valider {
   display: none;
+  border-radius: 999px;
 }
 
 #button-confirmation {
   display: flex;
   justify-content: center;
+  border-radius: 999px;
 }
 
 /* Timer */
@@ -306,9 +306,135 @@ input {
   visibility: hidden;
   background-color: black;
   color: blanchedalmond;
+  border-radius: 999px;
 }
 
-/* Tablette IPad*/
+/*----Iphone7----*/
+@media (max-width: 767px) {
+  .container {
+    width: 95%;
+    margin: auto;
+  }
+
+  #slider img{
+    object-fit: cover;
+  }
+
+  
+  h2 {
+    bottom: 14%;
+    position: absolute;
+    left: 0;
+    height: 60px;
+    right: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: visible;
+    font-size: large;
+  }
+
+  /* Slides Control Buttons
+  */
+
+  #next-slide {
+    left: 1rem;
+    bottom: 0;
+    position: relative;
+  }
+
+  #prev-slide {
+    left: 1rem;
+    bottom: 0;
+    position: relative;
+    margin-top: 2%;
+  }
+
+  #play-slide {
+    bottom: 0rem;
+    left: 1rem;
+    right: 0;
+    position: relative;
+  }
+
+  #carte {
+    width: 95%;
+    left: 0;
+    right: 0;
+  }
+
+  /*Information Block
+*/
+
+  #informationBlock {
+    position: relative;
+    width: 95%;
+    height: 320px;
+    top: 108%;
+    left: 0;
+  }
+
+
+  #resaBtn {
+    background-color: black;
+    color: blanchedalmond;
+    position: absolute;
+    top: 88%;
+    left: 5%;
+    border-radius: 999px;
+  }
+
+  /* Formulaire
+*/
+
+  #myForm {
+    width: 50%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  input {
+    margin-top: 4%;
+    display: flex;
+    position: relative;
+    left: 50%;
+  }
+
+  #error {
+    position: absolute;
+    top: 85%;
+  }
+
+  /*Reservation Block
+  */
+  #reservationBlock {
+    position: absolute;
+    top: 115%;
+    left: 0;
+  }
+
+
+  /*CountDown Block
+  */
+
+  #countdown {
+    position: absolute;
+    margin-top: 90%;
+    text-align: justify;
+    flex-wrap: wrap;
+    font-size: large;
+  }
+
+  #stop {
+    position: relative;
+    left: 34%;
+    margin-top: 113%;
+    border-radius: 1%;
+    margin-bottom: 2%;
+  }
+}
+
+/*----Tablette IPad-----*/
 @media (min-width: 768px) and (max-width: 1024px) {
   .container {
     width: 95%;
@@ -355,26 +481,27 @@ input {
 }
 
 /* Block Carte*/
+
   #carte {
     width: 95%;
     left: 0;
     right: 0;
   }
 
-  /*Information Block
-*/
+  /*Information Block */
+
   #informationBlock {
     position: relative;
     width: 50%;
-    height: auto;
+    height: 315px;
     top: 130%;
     left: 0;
   }
 
   #reservation-button {
     position: absolute;
-    top: 91%;
-    left: 37%;
+    top: 93%;
+    left: 40%;
   }
 
   #resaBtn {
@@ -383,8 +510,8 @@ input {
     color: blanchedalmond;
   }
 
-  /* Formulaire
-*/
+  /* Formulaire */
+
   #myForm {
     width: 50%;
     flex-direction: column;
@@ -405,8 +532,8 @@ input {
     left: 8%;
   }
 
-  /*Reservation Block
-  */
+  /*Reservation Block */
+
   #reservationBlock {
     position: absolute;
     top: 115%;
@@ -415,8 +542,7 @@ input {
   }
 
 
-  /*CountDown Block
-  */
+  /*CountDown Block */
 
   #countdown {
     position: relative;
@@ -429,130 +555,4 @@ input {
     border-radius: 1%;
   }
 
-}
-
-/* Iphone7*/
-@media (max-width: 767px) {
-  .container {
-    width: 95%;
-    margin: auto;
-  }
-
-  #slider img{
-    object-fit: cover;
-  }
-
-  
-    h2 {
-      bottom: 14%;
-      position: absolute;
-      left: 0;
-      height: 60px;
-      right: 0;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.5);
-      visibility: visible;
-      font-size: large;
-    }
-
-
-  /* Slides Control Buttons
-  */
-
-
-  #next-slide {
-    left: 1rem;
-    bottom: 0;
-    position: relative;
-  }
-
-  #prev-slide {
-    left: 1rem;
-    bottom: 0;
-    position: relative;
-    margin-top: 2%;
-  }
-
-  #play-slide {
-    bottom: 0rem;
-    left: 1rem;
-    right: 0;
-    position: relative;
-  }
-
-  #carte {
-    width: 95%;
-    left: 0;
-    right: 0;
-  }
-
-  /*Information Block
-*/
-  #informationBlock {
-    position: relative;
-    width: 95%;
-    height: auto;
-    top: 108%;
-    left: 0;
-  }
-
-  #reservation-button {
-    position: absolute;
-    top: 91%;
-    left: 38%;
-  }
-
-  #resaBtn {
-    position: absolute;
-    background-color: black;
-    color: blanchedalmond;
-  }
-  /* Formulaire
-*/
-  #myForm {
-    width: 50%;
-    flex-direction: column;
-    text-align: center;
-  }
-
-
-  input {
-    margin-top: 4%;
-    display: flex;
-    position: relative;
-    left: 50%;
-  }
-
-  #error {
-    position: absolute;
-    top: 85%;
-  }
-
-  /*Reservation Block
-  */
-  #reservationBlock {
-    position: absolute;
-    top: 115%;
-    left: 0;
-  }
-
-
-  /*CountDown Block
-  */
-
-  #countdown {
-    position: absolute;
-    margin-top: 80%;
-    text-align: justify;
-    flex-wrap: wrap;
-    font-size: large;
-  }
-
-  #stop {
-    position: relative;
-    left: 34%;
-    margin-top: 103%;
-    border-radius: 1%;
-    margin-bottom: 2%;
-  }
 }
