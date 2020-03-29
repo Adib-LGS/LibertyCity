@@ -25,19 +25,19 @@ canvas2.initTouch();
 canvas2.clearCanvas();
 
 /* Initialisation Timer*/
+const timer2 = new Timer(20,0);
+timer2.intervalId2 = setInterval(() => { 
+timer2.startCountdown();
+}, 1000);
+timer2.stopCountDown();
+
 // L'orsque je refresh la page je regarde ce qu'il y a en storage + reprend l'affichage si pas de minute et sec stocké = Aucune reservation = Aucun décompte
-if((sessionStorage.getItem('Minutes') != null)  && (sessionStorage.getItem('Seconds')!= null)){
+if((sessionStorage.getItem('Minutes') != null)  && (sessionStorage.getItem('Seconds') != null)){
     const timer2 = new Timer(Number(sessionStorage.getItem('Minutes')), Number(sessionStorage.getItem('Seconds'))); //Number = traduit le (Key:String) de base en (Key:nombre)
     timer2.intervalId2 = setInterval(() => { 
     timer2.start();
 }, 1000);
     timer2.stopCountDown();
-} else {
-    const timer2 = new Timer(20,0);
-    timer2.intervalId2 = setInterval(() => { 
-    timer2.startCountdown();
-}, 1000);
-timer2.stopCountDown();
 }
 
 

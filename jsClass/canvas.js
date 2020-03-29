@@ -58,10 +58,7 @@ class Canvas {
     }
 
     start(position) {
-        const {
-            x,
-            y
-        } = position;
+        const { x, y } = position;
         this.context.moveTo(x, y); //1er Point de départ
         //Nouveau dessin
         this.context.beginPath(); //Début d'un nouveau tracé
@@ -76,10 +73,7 @@ class Canvas {
     /* Gére le mouvement du dessin*/
     move(position) {
         if (this.isDrawing) {
-            const {
-                x,
-                y
-            } = position;
+            const {x, y } = position;
             this.context.lineTo(x, y); //Suite du point de depart moveTo()
             this.context.stroke();//Function stroke qui permet de tracer la ligne
         }

@@ -27,7 +27,7 @@ class Form {
                 this.errorForm.innerHTML = "SVP, veuillez remplir tout les champs";
                 this.errorForm.style.color = 'orange';
             } else {
-                this.reservationBtn.style.display = 'block';
+                this.reservationBtn.style.display = 'inline-block';
                 this.errorForm.style.display = 'none';
             }   
         });

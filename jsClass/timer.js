@@ -45,8 +45,9 @@ class Timer {
             e.preventDefault();
             clearInterval(this.intervalId2);
             sessionStorage.clear();
-            this.countdownTexte.style.visibility = "hidden";
+            this.countdownTexte.style.visibility = "visible";
             this.stopTimerButton.style.visibility = "hidden";
+            this.countdownTexte.innerHTML = `<p>La réservation est annulée, SVP veuillez recommencer</p>`;
         });
     }
 
