@@ -8,8 +8,10 @@ class Timer {
 
     /* Mise en place du Counter*/
     setCountdown() {
+        //console.log(this.time);
+        clearInterval(this.intervalId2);
         this.intervalId2 = setInterval(() => {
-
+            
             const minutes = Math.floor(this.time / 60); //RECUPERE TTES LES SECONDES ET ON / PAR 60 PR RECUPERER LES MINUTES, PUI SON ARRONDIS LES DECIMALES AVEC MATH.FLOOR
             let seconds = this.time % 60; //RECUPERE LE RESTE DES SECONDES AVEC OPERATEUR MODULO
 
@@ -33,7 +35,7 @@ class Timer {
             e.preventDefault();
             this.time = 20 * 60; //Remet le counter a 20 min
             clearInterval(this.intervalId2);
-            this.setCountdown();
+            this.setCountdown(); //Apl du counter 
             this.countdownTexte.style.visibility = "visible";
             this.stopTimerButton.style.visibility = "visible";
         });

@@ -25,20 +25,26 @@ canvas2.initTouch();
 canvas2.clearCanvas();
 
 /* Initialisation Timer*/
-const timer2 = new Timer(20,0);
-timer2.intervalId2 = setInterval(() => { 
-timer2.startCountdown();
-}, 1000);
-timer2.stopCountDown();
+//On impopse Min et Sec au Timer
+let minute = 20;
+let seconde = 0; 
 
 // L'orsque je refresh la page je regarde ce qu'il y a en storage + reprend l'affichage si pas de minute et sec stocké = Aucune reservation = Aucun décompte
 if((sessionStorage.getItem('Minutes') != null)  && (sessionStorage.getItem('Seconds') != null)){
-    const timer2 = new Timer(Number(sessionStorage.getItem('Minutes')), Number(sessionStorage.getItem('Seconds'))); //Number = traduit le (Key:String) de base en (Key:nombre)
-    timer2.intervalId2 = setInterval(() => { 
-    timer2.start();
-}, 1000);
-    timer2.stopCountDown();
+    minute = Number(sessionStorage.getItem('Minutes'));
+    seconde = Number(sessionStorage.getItem('Seconds'));
 }
 
-
-
+const timer2 = new Timer(minute,seconde);
+if((sessionStorage.getItem('Minutes') != null)  && (sessionStorage.getItem('Seconds') != null)){
+    timer2.intervalId2 = setInterval(() => { 
+        timer2.start(); //Le counter part tt de suite 
+        timer2.startCountdown();//Prend en compte l'evenement sur le bouton qui refait un apl au counter
+    }, 1000);
+        timer2.stopCountDown();
+} else { //En attente du click sur l'evenement ds startCountdown
+    timer2.intervalId2 = setInterval(() => { 
+        timer2.startCountdown();
+        }, 1000);
+        timer2.stopCountDown();
+}
