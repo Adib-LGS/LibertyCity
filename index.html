@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>LibertyCity</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/af2b4bffae.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"/>
+  </head>
+
+  <body>
+    <header>
+      <h1>Roulez librement,<br> Louez LibertyCity !</h1>
+      <p>Pour reserver, merci de de suivre les instructions ci dessous</p>
+    </header>
+
+    <!--Section Slider-->
+    <div class="container">
+      <div id="slider">
+        <div class="slide">
+          <img src="img/velostation.jpg" alt="banner1" />
+          <h2>
+            Repérez votre station sur la map, et vérifiez la disponibilité des
+            vélos
+          </h2>
+        </div>
+
+        <div class="slide">
+          <img src="img/form.jpg" alt="banner2" />
+          <h2>
+            Remplissez le formulaire et signer dans le cadre pour reserver
+          </h2>
+        </div>
+
+        <div class="slide">
+          <img src="img/bikes.jpg" alt="banner3" />
+          <h2>Une fois reserver vous avez 20 min pour récupérer votre vélo</h2>
+        </div>
+      </div>
+    </div>
+    <!--Fin Section Slider-->
+
+    <!--Section Buttons-->
+    <button id="prev-slide"><i class="fas fa-arrow-left"></i></button>
+    <button id="next-slide"><i class="fas fa-arrow-right"></i></button>
+    <button id="play-slide">Pause</button>
+    <!--Fin Section Buttons-->
+
+    <!--Section Map && Reservation-->
+    <div id="carte">
+      <div id="map" style="height: 280px;"></div>
+
+      <!--Block Information  Station-->
+      <div id="informationBlock">
+        <div id="info-station"></div>
+        <form id="myForm" name="inscription">
+          <label for="nom">Nom:</label>
+          <input type="text" pattern="/^[a-zA-Z-\s]+$/" name="Pseudo" id="nom" placeholder="Nom" required />
+
+          <label for="prenom">Prenom:</label>
+          <input type="text" pattern="/^[a-zA-Z-\s]+$/" name="Pseudo2" id="prenom" placeholder="Prenom" required/>
+          <!--Error Message JS Side-->
+          <span id="error"></span>
+          <div id="reservation-button">
+            <input type="submit" id="resaBtn" >
+          </div>
+        </form>
+      </div>
+      <!--Fin du Block-->
+      <!--Block Reservation Station-->
+      <div id="reservationBlock">
+        <!--Canvas + Buttons de Validation-->
+        <canvas id="canvas"></canvas>
+        <button id="effacer">effacer</button>
+
+        <div id="button-confirmation">
+          <button id="button-valider">Valider</button>
+          <button id="button-annuler">Annuler</button>
+        </div>
+      </div>
+    </div>
+    <!--Fin du Block-->
+      <!--Fichier JS Leaflet-->
+      <script
+        src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""
+      ></script>
+    <!--Fin Section Map && Reservation-->
+
+    <!--Debut Section Timer-->
+      <footer>
+        <span id="countdown"></span>
+        <button id="stop">Stop Réservation</button>
+      </footer>
+    <!--Fin Section Timer-->
+    <script>"https://cdnjs.cloudflare.com/ajax/libs/fetch/3.0.0/fetch.js"</script>
+    <script>"https//cdnjs.cloudflare.com/ajax/libs/fetch/3.0.0/fetch.min.js"</script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
+    <script src="jsClass/slider.js"></script>
+    <script src="jsClass/map.js"></script>
+    <script src="jsClass/canvas.js"></script>
+    <script src="jsClass/form.js"></script>
+    <script src="jsClass/timer.js"></script>
+    <script src="jsClass/main.js"></script>
+  </body>
+  </html>
