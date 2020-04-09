@@ -59,7 +59,7 @@
     <!--Fin Section Buttons-->
 
     <!--Section Map && Reservation-->
-    <section id="carte">
+    <div id="carte">
       <div id="map" style="height: 280px;"></div>
 
       <!--Block Information  Station-->
@@ -74,11 +74,11 @@
           <!--Error Message JS Side-->
           <span id="error"></span>
           <div id="reservation-button">
-            <input type="submit" id="resaBtn" ></input>
+            <input type="submit" id="resaBtn" >
           </div>
         </form>
       </div>
-
+      <!--Fin du Block-->
       <!--Block Reservation Station-->
       <div id="reservationBlock">
         <!--Canvas + Buttons de Validation-->
@@ -90,8 +90,8 @@
           <button id="button-annuler">Annuler</button>
         </div>
       </div>
-    </section>
-
+    </div>
+    <!--Fin du Block-->
       <!--Fichier JS Leaflet-->
       <script
         src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
@@ -101,12 +101,10 @@
     <!--Fin Section Map && Reservation-->
 
     <!--Debut Section Timer-->
-    <section>
       <footer>
         <span id="countdown"></span>
         <button id="stop">Stop Réservation</button>
       </footer>
-    </section>
     <!--Fin Section Timer-->
     <script>"https://cdnjs.cloudflare.com/ajax/libs/fetch/3.0.0/fetch.js"</script>
     <script>"https//cdnjs.cloudflare.com/ajax/libs/fetch/3.0.0/fetch.min.js"</script>

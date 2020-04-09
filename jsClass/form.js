@@ -51,6 +51,7 @@ class Form {
             if((localStorage.getItem('Nom'))&&(localStorage.getItem('Prenom'))) {
                 this.nomForm.value = localStorage.getItem('Nom');
                 this.prenomForm.value = localStorage.getItem('Prenom'); 
+                this.reservationBtn.style.display = 'inline-block';
             } 
         });
     }

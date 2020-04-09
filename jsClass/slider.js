@@ -4,7 +4,7 @@ class Slider {
     this.counterImg = 0; //Compteur d'Image pour le Slider
     this.nextImg = -100 * (this.slide.length - 1); //Ajustement des width IMG en %  permet défilement IMG
     this.playSlider = true; //Sert pour lancer le Slider Automatiquement
-    this.buttonNext = document.getElementById("next-slide"); //Recuperation des Bouttons ds le DOM
+    this.buttonNext = document.getElementById("next-slide"); 
     this.buttonPrev = document.getElementById("prev-slide");
     this.buttonPlay = document.getElementById("play-slide");
   }
