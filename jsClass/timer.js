@@ -53,7 +53,7 @@ class Timer {
         });
     }
 
-    /* Repartir avec les data Storage pour éviter de revenir a 20:00min Uniquement(Voir Main.js)*/
+    /* Repartir avec les data en Storage pour éviter de revenir a 20:00min Uniquement(Voir Main.js)*/
     start(){
         clearInterval(this.intervalId2);
             this.setCountdown();

@@ -39,7 +39,7 @@ class Map {
         //console.log(this.stationData[0]);
         const station = this.stationData[i];
 
-        let imageLink = "marker_blue"; //tout les markers sont blue de base
+        let imageLink = "marker_blue"; 
         if (station.available_bikes > 10 && station.status === "OPEN") {
           imageLink = "marker_green";
         }
