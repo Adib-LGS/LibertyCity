@@ -51,7 +51,7 @@ class Map {
 
       //Stock l'URL img et la Size des markers
       const markerIcon = L.icon({
-          iconUrl: `img/${imageLink}.png`,
+          iconUrl: `public/img/${imageLink}.png`,
           iconSize: [20, 30]
         });
 
