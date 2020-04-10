@@ -16,11 +16,11 @@ class Form {
     formVerification() {
         this.myForm.addEventListener("input", (e) => {
             e.preventDefault();
-            if (this.myRegex.test(this.nomForm.value && this.prenomForm.value) == false) {
+            if (this.myRegex.test((this.nomForm.value) && (this.prenomForm.value)) === false) {
+                this.reservationBtn.style.display = 'none';
                 this.errorForm.innerHTML = "SVP, veuillez utiliser des lettres et tirets";
                 this.errorForm.style.color = 'red';
                 this.errorForm.style.display = 'block';
-                this.reservationBtn.style.display = 'none';
 
             //trim() == function qui empeche prise en compte des "espaces" comme valeur ds Formulaire
             } else if ((!this.nomForm.value.trim()) || (!this.prenomForm.value.trim())) {
